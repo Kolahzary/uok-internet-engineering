@@ -53,3 +53,7 @@ Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmit
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 
+### Projects
+
+## Other References
+- [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
