@@ -53,7 +53,27 @@ Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmit
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 
-### Projects
+## Final Project
+
+### Checkpoints
+- Checkpoint 1: Single Client Chat (You got it!)
+  - Inputs from server console should be printed on client console
+  - Inputs from client console should be printed on server console
+- Checkpoint 2: Multi-User Chat (You’re a great student)
+  - First take own username from user
+  - Then take target username
+  - Create a dictionary of username → connection on server
+  - Users should be able to start a bi-directional chat together
+- Checkpoint 3: Users list (You’re a pro programmer!)
+    - Create a specific request which returns list of online usernames
+    - Create a UI to show users list and start a chat after clicking on a
+username
+
+### Results
+
+- [Eghbal Amini Nejad](https://github.com/eqba1/erwin)
+- [Mo`men Hamaveisi](https://github.com/momen7899/SocketProgramming)
+
 
 ## Other References
 - [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
