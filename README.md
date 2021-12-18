@@ -73,6 +73,7 @@ username
 
 - [Eghbal Amini Nejad](https://github.com/eqba1/erwin)
 - [Mo`men Hamaveisi](https://github.com/momen7899/SocketProgramming)
+- [Hamed Azizi](https://github.com/H-Azizi/socket-Programming-chat-room)
 
 
 ## Other References
