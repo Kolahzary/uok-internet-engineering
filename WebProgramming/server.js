@@ -6,19 +6,41 @@ const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
-const messages = [
+const MessageLists = [
     {
-        time: '01 April 2016',
-        content: 'Hello Friendie :)',
-        avatarUserId: 1,
-        isOtherMessage: true,
+        users: [1, 2],
+        messages: [
+            {
+                time: '01 April 2016',
+                content: 'Hello Friendie :)',
+
+                senderId: 1,
+            },
+            {
+                time: '01 March 2020',
+                content: 'Wassup?',
+
+                senderId: 2,
+            },
+        ]
     },
     {
-        time: '01 March 2020',
-        content: 'Wassup?',
-        avatarUserId: 2,
-        isOtherMessage: false,
-    },
+        users: [1, 3],
+        messages: [
+            {
+                time: '01 April 2016',
+                content: 'Hello Friendie :)',
+
+                senderId: 3,
+            },
+            {
+                time: '01 March 2020',
+                content: 'Wassup? dude',
+
+                senderId: 1,
+            },
+        ]
+    }
 ]
 
 const users = [
@@ -42,15 +64,32 @@ const users = [
     },
 ]
 
-let message = 'initial message'
-app.get('/api/message', (req, res) => {
-    res.send({
-        text: message
-    })
-})
-app.post('/api/message', (req, res) => {
+app.post('/api/sendMessage', (req, res) => {
     console.log(req.body)
-    message = req.body.text
+    const from = req.body.from
+    const target = req.body.target
+    const text = req.body.text
+
+    let messageList = MessageLists.find(x => 
+        (x.users.includes(from) && x.users.includes(target))
+    )
+    if (messageList === undefined) {
+        messageList = {
+            users: [from, target],
+            messages: []
+        }
+
+        MessageLists.push(messageList)
+    }
+
+    messageList.messages.push({
+        time: new Date().toISOString(),
+        content: text,
+        senderId: from,
+    })
+
+    console.log([messageList, MessageLists])
+
     res.send({})
 })
 
@@ -59,7 +98,32 @@ app.get('/api/users', (req, res) => {
 })
 
 app.get('/api/messages', (req, res) => {
-    res.send(messages)
+    const me = parseInt(req.query.me, 10)
+    const other = parseInt(req.query.other, 10)
+
+    let messageList = MessageLists.find(x => 
+        (x.users[0] == me && x.users[1] == other) ||
+        (x.users[1] == me && x.users[0] == other)
+    )
+
+    if (messageList === undefined) {
+        messageList = {
+            users: [
+                me,
+                other
+            ],
+            messages: [
+                {
+                    time: '01 April 2016',
+                    content: 'You haven\'t sent me any messages yet!',
+
+                    senderId: me,
+                }
+            ]
+        }
+    }
+
+    res.send(messageList.messages)
 })
 
 

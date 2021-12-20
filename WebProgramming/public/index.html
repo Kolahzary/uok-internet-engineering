@@ -66,12 +66,9 @@
 </body>
 <script>
 
-setInterval(async () => {
-    await getMessage()
-}, 1000);
 
 async function getMessages() {
-    const response = await fetch('/api/messages');
+    const response = await fetch(`/api/messages?me=${currentUser.id}&other=${targetUserId}`);
     const messages = await response.json();
     return messages;
 }
@@ -85,14 +82,9 @@ async function getCurrentUser() {
     const currentUser = await response.json();
     return currentUser;
 }
-async function getMessage() {
-    const response = await fetch('/api/message');
-    const message = await response.json();
-    document.querySelector('.message').innerText = message.text
-}
 async function sendMessage() {
     const input = document.querySelector('#messageInput')
-    await fetch('/api/message', {
+    await fetch('/api/sendMessage', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -117,11 +109,12 @@ function generateUserHtml(user) {
 </li>`;
 }
 function generateMessageHtml(message) {
+    console.log(message)
    return ` 
 <li class="clearfix">
     <div class="message-data ${message.isOtherMessage ? 'text-right' : ''}">
         <span class="message-data-time">${message.time}</span>
-        <img src="https://bootdey.com/img/Content/avatar/avatar${message.avatarUserId}.png" alt="avatar">
+        <img src="https://bootdey.com/img/Content/avatar/avatar${message.senderId}.png" alt="avatar">
     </div>
     <div class="message ${message.isOtherMessage ? 'other-message float-right': 'my-message'}"> ${message.content} </div>
 </li>`;
@@ -130,6 +123,9 @@ function generateMessageHtml(message) {
 let targetUserId = 1
 function userClicked(userId) {
     targetUserId = userId
+    LoadMessages().then(() => {
+        console.log('Messages loaded successfully')
+    })
 }
 
 let allUsers = []
@@ -144,15 +140,26 @@ getUsers().then((users) => {
     document.querySelector('#usersList').innerHTML = usersHtml;
 })
 
-getMessages().then((messages) => {
+
+setInterval(() => {
+    LoadMessages().then(() => {
+        console.log('messages are loaded')
+    })
+}, 1000);
+
+async function LoadMessages() {
+    const messages = await getMessages();
+
     let messagesHtml = ''
 
     messages.forEach(message => {
+        message.isOtherMessage = message.senderId == currentUser.id
+        
         messagesHtml += generateMessageHtml(message)
     })
 
     document.querySelector('#messageList').innerHTML = messagesHtml;
-})
+}
 
 let currentUser = null
 getCurrentUser().then((user) => {
