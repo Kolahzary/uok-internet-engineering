@@ -6,6 +6,21 @@ const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
+const messages = [
+    {
+        time: '01 April 2016',
+        content: 'Hello Friendie :)',
+        avatarUserId: 1,
+        isOtherMessage: true,
+    },
+    {
+        time: '01 March 2020',
+        content: 'Wassup?',
+        avatarUserId: 2,
+        isOtherMessage: false,
+    },
+]
+
 const users = [
     {
         id: 1,
@@ -41,6 +56,10 @@ app.post('/api/message', (req, res) => {
 
 app.get('/api/users', (req, res) => {
     res.send(users)
+})
+
+app.get('/api/messages', (req, res) => {
+    res.send(messages)
 })
 
 

@@ -46,26 +46,8 @@
                         </div>
                     </div>
                     <div class="chat-history">
-                        <ul class="m-b-0">
-                            <li class="clearfix">
-                                <div class="message-data text-right">
-                                    <span class="message-data-time">10:10 AM, Today</span>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                                </div>
-                                <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
-                            </li>
-                            <li class="clearfix">
-                                <div class="message-data">
-                                    <span class="message-data-time">10:12 AM, Today</span>
-                                </div>
-                                <div class="message my-message">Are we meeting today?</div>                                    
-                            </li>                               
-                            <li class="clearfix">
-                                <div class="message-data">
-                                    <span class="message-data-time">10:15 AM, Today</span>
-                                </div>
-                                <div class="message my-message">Project has been already finished and I have results to show you.</div>
-                            </li>
+                        <ul class="m-b-0" id="messageList">
+                            <!-- Messages are loaded here dynamically -->
                         </ul>
                     </div>
                     <div class="chat-message clearfix">
@@ -88,6 +70,11 @@ setInterval(async () => {
     await getMessage()
 }, 1000);
 
+async function getMessages() {
+    const response = await fetch('/api/messages');
+    const messages = await response.json();
+    return messages;
+}
 async function getUsers() {
     const response = await fetch('/api/users');
     const users = await response.json();
@@ -129,6 +116,16 @@ function generateUserHtml(user) {
     </div>
 </li>`;
 }
+function generateMessageHtml(message) {
+   return ` 
+<li class="clearfix">
+    <div class="message-data ${message.isOtherMessage ? 'text-right' : ''}">
+        <span class="message-data-time">${message.time}</span>
+        <img src="https://bootdey.com/img/Content/avatar/avatar${message.avatarUserId}.png" alt="avatar">
+    </div>
+    <div class="message ${message.isOtherMessage ? 'other-message float-right': 'my-message'}"> ${message.content} </div>
+</li>`;
+}
 
 let targetUserId = 1
 function userClicked(userId) {
@@ -145,6 +142,16 @@ getUsers().then((users) => {
     });
 
     document.querySelector('#usersList').innerHTML = usersHtml;
+})
+
+getMessages().then((messages) => {
+    let messagesHtml = ''
+
+    messages.forEach(message => {
+        messagesHtml += generateMessageHtml(message)
+    })
+
+    document.querySelector('#messageList').innerHTML = messagesHtml;
 })
 
 let currentUser = null
