@@ -21,49 +21,8 @@
         `                </div>
                         <input type="text" class="form-control" placeholder="Search...">
                     </div>
-                    <ul class="list-unstyled chat-list mt-2 mb-0">
-                        <li class="clearfix">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
-                            <div class="about">
-                                <div class="name">Vincent Porter</div>
-                                <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>                                            
-                            </div>
-                        </li>
-                        <li class="clearfix active">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                            <div class="about">
-                                <div class="name">Aiden Chavez</div>
-                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                            <div class="about">
-                                <div class="name">Mike Thomas</div>
-                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                            </div>
-                        </li>                                    
-                        <li class="clearfix">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-                            <div class="about">
-                                <div class="name">Christian Kelly</div>
-                                <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
-                            <div class="about">
-                                <div class="name">Monica Ward</div>
-                                <div class="status"> <i class="fa fa-circle online"></i> online </div>
-                            </div>
-                        </li>
-                        <li class="clearfix">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
-                            <div class="about">
-                                <div class="name">Dean Henry</div>
-                                <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
-                            </div>
-                        </li>
+                    <ul class="list-unstyled chat-list mt-2 mb-0" id="usersList">
+                        <!-- Users list are loaded dynamically -->
                     </ul>
                 </div>
                 <div class="chat">
@@ -71,11 +30,11 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                    <img id="currentUserImage" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
                                 </a>
                                 <div class="chat-about">
-                                    <h6 class="m-b-0">Aiden Chavez</h6>
-                                    <small>Last seen: 2 hours ago</small>
+                                    <h6 id="currentUserName" class="m-b-0">Loading...</h6>
+                                    <small id="currentUserStatus">Loading...</small>
                                 </div>
                             </div>
                             <div class="col-lg-6 hidden-sm text-right">
@@ -129,6 +88,16 @@ setInterval(async () => {
     await getMessage()
 }, 1000);
 
+async function getUsers() {
+    const response = await fetch('/api/users');
+    const users = await response.json();
+    return users;
+}
+async function getCurrentUser() {
+    const response = await fetch('/api/currentUser');
+    const currentUser = await response.json();
+    return currentUser;
+}
 async function getMessage() {
     const response = await fetch('/api/message');
     const message = await response.json();
@@ -142,12 +111,49 @@ async function sendMessage() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            text: input.value
+            from: currentUser.id,
+            target: targetUserId,
+            text: input.value,
         }),
     })
     input.value = ''
 }
 
+function generateUserHtml(user) {
+    return `
+<li class="clearfix" onclick="userClicked(${user.id})">
+    <img src="https://bootdey.com/img/Content/avatar/avatar${user.id}.png" alt="avatar">
+    <div class="about">
+        <div class="name">${user.name}</div>
+        <div class="status"> <i class="fa fa-circle ${user.statusClass}"></i> ${user.status} </div>                                            
+    </div>
+</li>`;
+}
+
+let targetUserId = 1
+function userClicked(userId) {
+    targetUserId = userId
+}
+
+let allUsers = []
+getUsers().then((users) => {
+    allUsers = users
+    let usersHtml = ''
+
+    users.forEach(user => {
+        usersHtml+= generateUserHtml(user)
+    });
+
+    document.querySelector('#usersList').innerHTML = usersHtml;
+})
+
+let currentUser = null
+getCurrentUser().then((user) => {
+    currentUser = user;
+    document.querySelector('#currentUserImage').setAttribute('src',`https://bootdey.com/img/Content/avatar/avatar${user.id}.png`)
+    document.querySelector('#currentUserName').innerText = user.name
+    document.querySelector('#currentUserStatus').innerText = user.status
+})
 
 </script>
 </html>

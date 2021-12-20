@@ -6,6 +6,26 @@ const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
+const users = [
+    {
+        id: 1,
+        name: 'Aide Chaves',
+        status: 'online',
+        statusClass: 'online'
+    },
+    {
+        id: 2,
+        name: 'My aaa Test User',
+        status: 'long time ago',
+        statusClass: 'offline'
+    },
+    {
+        id: 3,
+        name: 'My Test User 2',
+        status: 'long time ago',
+        statusClass: 'offline'
+    },
+]
 
 let message = 'initial message'
 app.get('/api/message', (req, res) => {
@@ -14,8 +34,19 @@ app.get('/api/message', (req, res) => {
     })
 })
 app.post('/api/message', (req, res) => {
+    console.log(req.body)
     message = req.body.text
     res.send({})
+})
+
+app.get('/api/users', (req, res) => {
+    res.send(users)
+})
+
+
+app.get('/api/currentUser', (req, res) => {
+    const randomIndex = Math.round((Math.random() * 3))
+    res.send(users[randomIndex])
 })
 
 app.listen(3000, () => {
