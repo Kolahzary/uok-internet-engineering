@@ -82,3 +82,9 @@ username
 
 ## Other References
 - [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
+
+## TODO
+
+- Migrade front-end of web-programming project to a web framework (Angular, Vue, React)
+- Add photo sending feature to web-programming project
+- Use websocket instead of http for web-programming project
