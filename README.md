@@ -55,7 +55,28 @@ Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmit
 
 ## Final Project
 
-### Checkpoints
+### Web
+
+Create a todo-list management web-application with following features:
+- Create ( create new item )
+- Read ( show a list of created items )
+- Update ( click checkbox and save done/undone state )
+- Delete ( delete todo item )
+- Search ( search a word in list items )
+- Filter ( show only done items / show all items )
+
+These concepts should be used in your project:
+- Frontend / API / Backend ( todo data should be saved on server and front-end should access them using API )
+- Ajax / SinglePage front-end
+- Git + GitHub
+- Good documentation on README.md file
+
+Optional features: (implement following features if you want more score)
+- Implement an authentication mechanism which each user has own account and can login and manage his records on multiple devices
+- Use frameworks like vue.js, angular, react, etc...
+- Database or File ( todo data should be stored permanently, nothing should be cleared after restarting server & client )
+
+### Socket
 - Checkpoint 1: Single Client Chat (You got it!)
   - Inputs from server console should be printed on client console
   - Inputs from client console should be printed on server console
@@ -78,6 +99,7 @@ username
 - [Edris Lotfpouri](https://github.com/GoodmanPole/GoodmanChatPole)
 - [Aryas Karimi](https://github.com/Aryas1378/socket)
 - [Parvin Hoseini & Pouya Haghighat](https://github.com/hoseini98/SI)
+
 
 
 ## Other References
