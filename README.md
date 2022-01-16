@@ -109,6 +109,8 @@ username
 - [Matin Moradi](https://github.com/MatinMorrradi/MatinGap)
 - [Arash Ahmadi](https://github.com/Arash-san/Chat-Application)
 - [Farhan Fakhr Zadeh Mardookhi](https://github.com/farhan-fm/Chat-WebSocket-php)
+- [Hasti Malmir](https://github.com/HastiMalmir78/SocketProgramming)
+- [Minoo Mehrpanah](https://github.com/meenoumeh/meenoumeh)
 
 
 ## Other References
