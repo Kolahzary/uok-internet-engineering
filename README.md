@@ -111,7 +111,7 @@ username
 - [Farhan Fakhr Zadeh Mardookhi](https://github.com/farhan-fm/Chat-WebSocket-php)
 - [Hasti Malmir](https://github.com/HastiMalmir78/SocketProgramming)
 - [Minoo Mehrpanah](https://github.com/meenoumeh/meenoumeh)
-
+- [Pardis Ghavami](https://github.com/pard1s/Simple-chat-application)
 
 ## Other References
 - [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
