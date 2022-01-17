@@ -113,6 +113,7 @@ username
 - [Minoo Mehrpanah](https://github.com/meenoumeh/meenoumeh)
 - [Pardis Ghavami](https://github.com/pard1s/Simple-chat-application)
 - [Neda Parvizi Fard & Sara Khalili](https://github.com/nedafard/EN_chatApp)
+- [Nima Sobhani](https://github.com/nimasb/chat_apllication_nima_sobhani)
 
 ## Other References
 - [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
