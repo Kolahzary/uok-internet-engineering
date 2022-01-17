@@ -102,7 +102,7 @@ username
 - [Ramyar Seydi](https://github.com/lramyarl/Socket-programming-in-C-)
 - [Edris Lotfpouri](https://github.com/GoodmanPole/GoodmanChatPole)
 - [Aryas Karimi](https://github.com/Aryas1378/socket)
-- [Parvin Hoseini & Pouya Haghighat](https://github.com/hoseini98/SI)
+- [Parvin Hoseini & Pouya Haghighat](https://github.com/hoseini98/chat)
 - [Ahmad Salehi](https://github.com/AhmadSalehi22/SocketProject)
 - [Saivan Soleiman Baigi](https://github.com/sayvanbaigi/imple.chat.app)
 - [Mohammad Hosein Totoonchi & Sahand Saed](https://github.com/mhtutunchi/ChatRoom)
