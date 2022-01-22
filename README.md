@@ -76,10 +76,6 @@ Optional features: (implement following features if you want more score)
 - Use frameworks like vue.js, angular, react, etc...
 - Database or File ( todo data should be stored permanently, nothing should be cleared after restarting server & client )
 
-#### Web Results
-
-- [Matin Moradi](https://github.com/MatinMorrradi/Matin-s-Todo-List)
-
 ### Socket
 - Checkpoint 1: Single Client Chat (You got it!)
   - Inputs from server console should be printed on client console
@@ -94,26 +90,68 @@ Optional features: (implement following features if you want more score)
     - Create a UI to show users list and start a chat after clicking on a
 username
 
-#### Socket Results
+#### Results
 
-- [Eghbal Amini Nejad](https://github.com/eqba1/erwin)
-- [Mo\`men Hamaveisi](https://github.com/momen7899/SocketProgramming)
-- [Hamed Azizi](https://github.com/H-Azizi/socket-Programming-chat-room)
-- [Ramyar Seydi](https://github.com/lramyarl/Socket-programming-in-C-)
-- [Edris Lotfpouri](https://github.com/GoodmanPole/GoodmanChatPole)
-- [Aryas Karimi](https://github.com/Aryas1378/socket)
-- [Parvin Hoseini & Pouya Haghighat](https://github.com/hoseini98/chat)
-- [Ahmad Salehi](https://github.com/AhmadSalehi22/SocketProject)
-- [Saivan Soleiman Baigi](https://github.com/sayvanbaigi/imple.chat.app)
-- [Mohammad Hosein Totoonchi & Sahand Saed](https://github.com/mhtutunchi/ChatRoom)
-- [Matin Moradi](https://github.com/MatinMorrradi/MatinGap)
-- [Arash Ahmadi](https://github.com/Arash-san/Chat-Application)
-- [Farhan Fakhr Zadeh Mardookhi](https://github.com/farhan-fm/Chat-WebSocket-php)
-- [Hasti Malmir](https://github.com/HastiMalmir78/SocketProgramming)
-- [Minoo Mehrpanah](https://github.com/meenoumeh/meenoumeh)
-- [Pardis Ghavami](https://github.com/pard1s/Simple-chat-application)
-- [Neda Parvizi Fard & Sara Khalili](https://github.com/nedafard/EN_chatApp)
-- [Nima Sobhani](https://github.com/nimasb/chat_apllication_nima_sobhani)
+- Eghbal Amini Nejad
+    - [Socket](https://github.com/eqba1/erwin)
+    - [Web](https://github.com/eqba1/Chappie)
+- Mo\`men Hamaveisi
+    - [Socket](https://github.com/momen7899/SocketProgramming)
+    - [Web](https://github.com/momen7899/ToDoList)
+- Hamed Azizi
+    - [Socket](https://github.com/H-Azizi/socket-Programming-chat-room)
+- Ramyar Seydi
+    - [Socket](https://github.com/lramyarl/Socket-programming-in-C-)
+- Edris Lotfpouri
+    - [Socket](https://github.com/GoodmanPole/GoodmanChatPole)
+- Aryas Karimi
+    - [Socket](https://github.com/Aryas1378/socket)
+    - [Socket](https://github.com/Aryas1378/Chat-Room)
+    - [Web](https://github.com/Aryas1378/todos-list)
+- Parvin Hoseini
+    - [Socket](https://github.com/hoseini98/chat) - team - Pouya Haghighat
+- Pouya Haghighat
+    - [Socket](https://github.com/hoseini98/chat) - team - Parvin Hoseini
+- Ahmad Salehi
+    - [Socket](https://github.com/AhmadSalehi22/SocketProject)
+- Saivan Soleiman Baigi
+    - [Socket](https://github.com/sayvanbaigi/imple.chat.app)
+    - [Web](https://github.com/sayvanbaigi/simple.todo.app)
+- Sahand Saed
+    - [Web](https://github.com/mhtutunchi/todo-list-website) - team - Mohammad Hosein Totoonchi
+    - [Socket](https://github.com/mhtutunchi/ChatRoom) - team - Mohammad Hosein Totoonchi
+    - [Socket - C language](https://github.com/mhtutunchi/ChatRoom_C) - team - Mohammad Hosein Totoonchi
+- Mohammad Hosein Totoonchi
+    - [Web](https://github.com/mhtutunchi/todo-list-website) - team - Sahand Saed
+    - [Socket](https://github.com/mhtutunchi/ChatRoom) - team - Sahand Saed
+    - [Socket - C language](https://github.com/mhtutunchi/ChatRoom_C) - team - Sahand Saed
+- Matin Moradi
+    - [Socket](https://github.com/MatinMorrradi/MatinGap)
+    - [Web](https://github.com/MatinMorrradi/Matin-s-Todo-List)
+- Arash Ahmadi
+    - [Socket](https://github.com/Arash-san/Chat-Application)
+- Farhan Fakhr Zadeh Mardookhi
+    - [Socket](https://github.com/farhan-fm/Chat-WebSocket-php)
+    - [Web](https://github.com/farhan-fm/ToDoList)
+- Hasti Malmir
+    - [Socket](https://github.com/HastiMalmir78/SocketProgramming)
+- Minoo Mehrpanah
+    - [Socket](https://github.com/meenoumeh/meenoumeh)
+- Pardis Ghavami
+    - [Socket](https://github.com/pard1s/Simple-chat-application)
+- Neda Parvizi Fard
+    - [Socket](https://github.com/nedafard/EN_chatApp) - team - Sara Khalili
+- Sara Khalili
+    - [Socket](https://github.com/nedafard/EN_chatApp) - team - Neda Parvizi Fard
+- Nima Sobhani
+    - [Socket](https://github.com/nimasb/chat_apllication_nima_sobhani)
+- Hazhir Ghafoori
+    - [Socket](https://github.com/HazhirGhafoori/socket-pr)
+    - [Web](https://github.com/HazhirGhafoori/todo-list-pr)
+- Aniran Mohammad Pour
+    - [Socket - Frontend](https://github.com/aniranmp/Client)
+    - [Socket - Backend](https://github.com/aniranmp/SpringBootStarter)
+    - [Web](https://github.com/aniranmp/DoDo)
 
 ## Other References
 - [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
