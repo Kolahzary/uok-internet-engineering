@@ -110,8 +110,10 @@ username
     - [Web](https://github.com/Aryas1378/todos-list)
 - Parvin Hoseini
     - [Socket](https://github.com/hoseini98/chat) - team - Pouya Haghighat
+    - [Web](https://github.com/Pouya-haqiqat/todolist) - team - Pouya Haghighat
 - Pouya Haghighat
     - [Socket](https://github.com/hoseini98/chat) - team - Parvin Hoseini
+    - [Web](https://github.com/Pouya-haqiqat/todolist) - team - Parvin Hoseini
 - Ahmad Salehi
     - [Socket](https://github.com/AhmadSalehi22/SocketProject)
 - Saivan Soleiman Baigi
@@ -152,6 +154,17 @@ username
     - [Socket - Frontend](https://github.com/aniranmp/Client)
     - [Socket - Backend](https://github.com/aniranmp/SpringBootStarter)
     - [Web](https://github.com/aniranmp/DoDo)
+- Rozhyar Moradi
+    - [Socket - Single User](https://github.com/rozhyar-moradi/One-user_chat)
+    - [Socket - Dual](https://github.com/rozhyar-moradi/dual-chat)
+- Behshad Davoodi
+    - [Socket](https://github.com/Behshad79/Simple-chat-nodejs)
+- Erfan Hoseini
+    - [Socket](https://github.com/Ashkancr7/git_project) - team - Ashkan Asadi
+- Ashkan Asadi
+    - [Socket](https://github.com/Ashkancr7/git_project) - team - Erfan Hoseini
+- Farouk Fallahi
+    - [Web](https://github.com/FaroukFallahi/todo-list-go-mysql)
 
 ## Other References
 - [OSI Model Representation on GitHub](https://github.com/vald-phoenix/the-osi-model)
